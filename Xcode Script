@@ -1,0 +1,4007 @@
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        TabView {
+            
+            FirstView()
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
+            
+            SecondView()
+                .tabItem {
+                    Image(systemName: "pill")
+                    Text("Medicine")
+                }
+            
+            ThirdView()
+                .tabItem {
+                    Image(systemName: "syringe")
+                    Text("Surgery")
+                }
+            
+            FourthView()
+                .tabItem {
+                    Image(systemName: "newspaper")
+                    Text("Legal")
+                }
+            
+            FifthView()
+                .tabItem {
+                    Image(systemName: "person.3")
+                    Text("About")
+                }
+            
+        }
+        .accentColor(Color.blue )
+        .onAppear {
+            UITabBar.appearance().backgroundColor = UIColor.black
+            
+            UITabBar.appearance().unselectedItemTintColor = UIColor.gray
+        }
+    }
+    
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
+    }
+    
+    
+    
+    
+    struct FirstView: View {
+        
+        
+        var body: some View {
+            
+            VStack {
+                
+                Color.white.ignoresSafeArea(edges: .top)
+                Image("MedAI 1")
+                    .resizable()
+                    .frame(width: 300, height:250)
+                    .offset(y:-300)
+                
+                
+                Text("Click medicine or surgery below to find your specialty.")
+                    .frame(width: 300)
+                    .offset(y:-200)
+    
+                
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    struct ThirdView: View {
+        var body: some View {
+
+            
+            NavigationView{
+                ZStack {
+                    Color.white
+                        .opacity(0.0)
+
+
+                        
+                        VStack(spacing: 3) {
+                            Text("Surgical Specialties")
+                                .font(.system(size: 35, weight: .heavy, design:.default))
+                            GS1()
+                            
+                            NSG1()
+                            
+                            UR1()
+                                .frame(maxWidth:.infinity)
+                        }
+                        .padding(.bottom, 0)
+                        .padding(.top, 0)
+                        .offset(y:-250)
+                    
+                }
+                .ignoresSafeArea()
+            }
+            
+        }
+        
+    }
+
+    
+    struct FifthView: View {
+        
+        var body: some View {
+            
+            VStack {
+                
+                ScrollView (.vertical, showsIndicators: true){
+                   
+                Text("About the Developers")
+                    .font(.system(size: 25, weight: .heavy, design:.default))
+                    .frame(width: 300)
+                    .bold()
+
+                    
+                Group{
+                            Text("Julian Gendreau MD")
+                                .font(.system(size: 15, weight: .heavy, design:.default))
+                                .frame(width: 300)
+                                .bold()
+                                .frame(height: 20)
+                        
+                            Image("Julian")
+                                .resizable()
+                                .frame(width: 150, height:150)
+                        
+                            Text("My interest in the neurosciences began early in medical school after observing a craniotomy to remove a deadly tumor, glioblastoma, from a patient with one of my close mentors. Witnessing the mesmerizing nature of the brain and realizing the many unknowns that are in our current scope of knowledge regarding this vital organ secured my decision to enter a career in the neurosciences for my future. I attended medical school at the Mercer University School of Medicine in Savannah, Georgia. Throughout my medical training, I was involved with several clinical projects in all aspects of the neurosciences, and I realized I wanted a career where I could further the knowledge with respect to diseases that often have grim prognoses for patients today. During my time in medical school, I also became interested in biomedical device development. Since graduating school, I have been completing a Masters in Applied Biomedical Engineering at the Johns Hopkins Whiting School of Engineering while becoming involved in the Neuro-Oncology Surgical Outcomes Laboratory at Johns Hopkins. Here, I participate in a variety of projects aimed at improving outcomes after surgery for brain cancers. Additionally, I am also devising projects of applying machine learning algorithms to enhance clinical decision-making capabilities in medicine and also to aid in prognostication of medical diseases.")
+                                .frame(width: 300)
+                                .multilineTextAlignment(.leading)
+
+                        
+                            Text("Cathleen Kuo BS")
+                                .font(.system(size: 15, weight: .heavy, design:.default))
+                                .frame(width: 300)
+                                .bold()
+                                .frame(height: 20)
+                        
+                            Image("Cathleen")
+                                .resizable()
+                                .frame(width: 175, height:250)
+
+                            Text("Cathleen was born and raised in Taiwan. She completed her undergraduate training at Tulane University and is currently a 3rd-year medical student at University at Buffalo. Her research interests include investigating social determinants of health and creating predictive models for neurosurgical outcomes with the goal to increase overall value in neurosurgery.")
+                                .frame(width: 300)
+                                .frame(height: 300)
+                                .multilineTextAlignment(.leading)
+ 
+                        
+                            Text("Nolan Brown BS")
+                                .font(.system(size: 15, weight: .heavy, design:.default))
+                                .frame(width: 300)
+                                .bold()
+                                .frame(height: 20)
+                        
+                            Image("Nolan")
+                                .resizable()
+                                .frame(width: 150, height:150)
+
+                            Text("My journey began as an undergraduate at the University of California, Irvine, where I majored in Biochemistry and Molecular Biology. After completing a course in basic neuroscience, which ended up being one of my favorite courses in college, I began to consider pursuing a career in neurosurgery. In sticking with this plan, I continued my medical education at the University of California, Irvine, where I am currently a medical student pursuing a dual MD/MBA degree. So far, my interest in neuroscience and neurosurgery has grown more than I could have ever expected, as I have been lucky to receive guidance from outstanding mentors who continue to light the fire of discovery within me. In neurosurgery, I hope to combine my love for healing people with my passion for understanding the human brain, and my greatest dream is to improve the quality of life of people from all backgrounds while engaging in the most cutting-edge research in neuroscience. Additionally, I hope that skills learned in my MBA program will allow me to make meaningful contributions in the field as much of the United States healthcare is greatly dictated by financial considerations.")
+                                .frame(width: 300)
+                                .multilineTextAlignment(.leading)
+                    
+                    }
+                    
+                    
+                }
+                
+                
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    struct FourthView: View {
+        
+        var body: some View {
+            
+            VStack(spacing: 100) {
+                ScrollView (.vertical, showsIndicators: true){
+                    
+                    Image(systemName: "square.and.pencil")
+                        .resizable()
+                        .frame(width: 100, height:100)
+                      
+                    
+                    Group {
+                            Text("Liability")
+                                .font(.system(size: 25, weight: .heavy, design:.default))
+                                .frame(width: 300)
+                                .bold()
+                                .frame(height: 20)
+
+                            Text("MedAI cannot and will not be held legally, financially, or medically responsible for decisions made using calculator links provided on this application. Individuals with any type of medical condition are specifically cautioned to seek professional medical advice before beginning any sort of health treatment. For medical concerns, including decisions about medications and other treatments, non-medical users users should always consult their physician or other qualified healthcare professional.")
+                                .frame(width: 300)
+                                .frame(height: 350)
+                                .multilineTextAlignment(.leading)
+                        
+                            Text("Copyright")
+                                .font(.system(size: 25, weight: .heavy, design:.default))
+                                .frame(width: 300)
+                                .bold()
+                                .frame(height: 20)
+                        
+                            Text("When content from original works is included on our site, we provide references (typically in our Evidence section) which are the intellectual property of their authors/publishers (or the public domain when appropriate). If you feel we have violated your copyright(s), please don’t hesitate to send us an email at jgendre1@jhu.edu and we will remove the offending content.")
+                                .frame(width: 300)
+                                .frame(height: 300)
+                                .multilineTextAlignment(.leading)
+                        
+                        
+                            Text("Intellectual Property")
+                                .font(.system(size: 25, weight: .heavy, design:.default))
+                                .frame(width: 300)
+                                .bold()
+                                .frame(height: 50)
+                        
+                            Text("This application is protected with the follow United States patent applications:")
+                                .frame(width: 300)
+                                .frame(height: 50)
+                                .multilineTextAlignment(.leading)
+                        
+                            Text("1.Computerized system to provide medical prognoses and outcomes utilizing machine learning algorithms through a mobile device application. Application for Provisional Utility Patent. U.S. Patent Application Number 63/38,2530.")
+                                .frame(width: 300)
+                                .frame(height: 175)
+                                .multilineTextAlignment(.leading)
+                        
+                            Text("2.Patient Interface for Providing Medical Progresses and Outcomes Utilization Crowdsourced Machine Learning Algorithms through a Mobile Device Application. U.S. Patent Application Number 63/476,056.")
+                                .frame(width: 300)
+                                .frame(height: 150)
+                                .multilineTextAlignment(.leading)
+                    }
+                    
+                
+                }
+                
+            }
+            
+        }
+    }
+        
+        
+        
+        struct SecondView: View {
+            var body: some View {
+                NavigationView{
+                    ZStack {
+                        Color.white
+                            .opacity(0.0)
+    
+
+                            
+                            VStack(spacing: 3) {
+                                Text("Medical Specialties")
+                                    .font(.system(size: 35, weight: .heavy, design:.default))
+                                IM1()
+                                
+                                GE1()
+                                
+                                END1()
+                                
+                                ID1()
+                                
+                                CR1()
+                                
+                                PSY1()
+                                
+                                DER1()
+                                
+                                CA1().frame(maxWidth:.infinity)
+                            }
+                            .padding(.bottom, 50)
+                            .padding(.top, 100)
+                            .offset(y:-150)
+                        
+                    }
+                    .ignoresSafeArea()
+                }
+                
+            }
+            
+        }
+        
+ 
+        
+        struct GS1: View {
+            var body: some View {
+                
+                VStack{
+                    NavigationLink(destination:
+                                    GS2()) {
+                        
+                        Text("General Surgery")
+                            .fontWeight(.heavy)
+                            .frame(width:350, height: 50)
+                            .background(RoundedRectangle(cornerRadius: 12).fill(Color.indigo)
+                                .shadow(radius:3)
+                                .opacity(0.6))
+                            .foregroundColor(.black)
+                        
+                    }
+                }
+            }
+        }
+        
+        
+        struct GS2: View {
+            var body: some View {
+                
+                ZStack{
+                    Color.white
+                        .opacity(0.5)
+                    
+                    Text("General Surgery")
+                        .offset(y: -300)
+                        .font(.system(size: 35, weight: .heavy))
+                        .foregroundColor(.black)
+                    
+                    
+                    ScrollView (.vertical, showsIndicators: false){
+                        
+                        
+                        VStack (spacing: 3) {
+                            NavigationLink(destination: GS6()) {
+                                Text("Predicting recurrence after upfront surgery in synchronous colorectal cancer liver metastasis")
+                                    .frame(width:350, height:75)
+                                    .background(RoundedRectangle(cornerRadius: 12).fill(Color.white)
+                                        .shadow(radius:3))
+                                    .foregroundColor(.black)
+                                    .padding(.top, 200)
+                                    .multilineTextAlignment(.leading)
+                                
+                                
+                            }
+                            
+                            
+                            
+                            NavigationLink(destination: GS7()) {
+                                Text("Outcomes Predictor after Mastectomy with N1 Breast Cancer")
+                                    .frame(width:350, height:75)
+                                    .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                    .foregroundColor(.black)
+                                    .multilineTextAlignment(.leading)
+                                
+                            }
+                            
+                            VStack (spacing: 3) {
+                                NavigationLink(destination: GS8()) {
+                                    Text("Real-time mortality risk calculator following pancreatoduodenectomy: quantifying the impact of perioperative events")
+                                        .frame(width:350, height:75)
+                                        .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                        .foregroundColor(.black)
+                                        .multilineTextAlignment(.leading)
+                                    
+                                }
+                                
+                                VStack (spacing: 3) {
+                                    NavigationLink(destination: GS9()) {
+                                        Text("Patients Having Undergone Ileal Pouch Anal Anastomosis (IPAA)")
+                                            .frame(width:350, height:75)
+                                            .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                            .foregroundColor(.black)
+                                            .multilineTextAlignment(.leading)
+                                        
+                                    }}
+                                
+                                VStack (spacing: 3) {
+                                    NavigationLink(destination: GS10()) {
+                                        Text("Complex Colorectal Surgery - 30-day Risk of Postoperative Organ Space Surgical Site Infection")
+                                            .frame(width:350, height:75)
+                                            .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                            .foregroundColor(.black)
+                                            .multilineTextAlignment(.leading)
+                                        
+                                    }}
+                                
+                                VStack (spacing: 3) {
+                                    NavigationLink(destination: GS11()) {
+                                        Text("Risk of Post-discharge Venous Thromboembolism after Bariatric Surgery")
+                                            .frame(width:350, height:75)
+                                            .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                            .foregroundColor(.black)
+                                            .multilineTextAlignment(.leading)
+                                        
+                                    }}
+                                
+                                VStack (spacing: 3) {
+                                    NavigationLink(destination: GS12()) {
+                                        Text("Sleeve Gastrectomy Risk Calculator")
+                                            .frame(width:350, height:75)
+                                            .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                            .foregroundColor(.black)
+                                            .multilineTextAlignment(.leading)
+                                        
+                                    }}
+                                
+                                VStack (spacing: 3) {
+                                    NavigationLink(destination: GS13()) {
+                                        Text("Individualized Metabolic Surgery Score for Bariatric Procedure Selection")
+                                            .frame(width:350, height:75)
+                                            .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                            .foregroundColor(.black)
+                                            .multilineTextAlignment(.leading)
+                                        
+                                    }}
+                                
+                            }}}
+                    
+                }
+            }
+        }
+        
+        
+        struct GS6: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Lee HS, Kwon HW, Lim SB, et al. FDG metabolic parameter-based models for predicting recurrence after upfront surgery in synchronous colorectal cancer liver metastasis. 2022. Online ahead of print. doi: 10.1007/s00330-022-09141-3.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("predicting recurrence after upfront surgery in synchronous colorectal cancer liver metastasis")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://pubmed.ncbi.nlm.nih.gov/36114846/")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://cpmodel.shinyapps.io/SCLM/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                }}
+            
+        }
+        
+        
+        
+        
+        struct GS7: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Li M, Yue J, Wan X, et al. Risk-Adapted Postmastectomy Radiotherapy Decision Based on Prognostic Nomogram for pT1-@N1M0 Breast Cancer: A Multicenter Study. 2020. Front Oncol 10:588859.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    Text("Outcomes Predictor after Mastectomy with N1 Breast Cancer")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7761288/")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/BreastPMRT/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                }}
+            
+        }
+        
+        
+        
+        
+        struct GS8: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Real-time mortality risk calculator following pancreatoduodenectomy: quantifying the impact of perioperative events. 2022. HPB 24(9): 1551-1559.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    Text("Real-time mortality risk calculator following pancreatoduodenectomy: quantifying the impact of perioperative events")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://pubmed.ncbi.nlm.nih.gov/35428586/")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://kota-sahara.shinyapps.io/Realtime-calculator/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                }}
+            
+        }
+        
+        
+        struct GS9: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Shen B, Yu C, Lian L, Remzi FH, Kiran RP, Fazio VW, Kattan MW. Prediction of late-onset pouch failure in patients with restorative proctocolectomy with a nomogram . J Crohns Colitis. 2012 Mar;6(2):198-206. doi: 10.1016/j.crohns.2011.08.006. Epub 2011 Sep 9.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("Patients Having Undergone Ileal Pouch Anal Anastomosis (IPAA)")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://www.sciencedirect.com/science/article/abs/pii/S1873994611002108")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/ColorectalCancerPatientsUndergoneIPAA/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                }}
+            
+        }
+        
+        
+        struct GS10: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("de Campos-Lobato LF, Wells B, Wick E, Pronty K, Kiran R, Remzi F, Vogel JD. Predicting organ space surgical site infection with a nomogram . J Gastrointest Surg. 2009 Nov;13(11):1986-92. doi: 10.1007/s11605-009-0968-6. Epub 2009 Sep 16. Erratum in: J Gastrointest Surg. 2011 Mar;15(3):540. Campos-Lobato, Luiz F [corrected to de Campos-Lobato, Luiz F]")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("Complex Colorectal Surgery - 30-day Risk of Postoperative Organ Space Surgical Site Infection")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "http://www.springerlink.com/content/b655l7655850l444/fulltext.pdf")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/ComplexColorectalSurgery30DayRiskofInfection/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                }}
+            
+        }
+        
+        struct GS11: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Ali Aminian, Amin Andalib, Zhamak Khorgami, Derrick Cetin, Bartolome Burguera, John Bartholomew, Stacy A Brethauer, Philip R Schauer. Who Should Get Extended Thromboprophylaxis After Bariatric Surgery? A Risk Assessment Tool to Guide Indications for Post-Discharge Pharmacoprophylaxis . Ann Surg. 2017 Jan;265(1):143-150. doi: 10.1097/SLA.0000000000001686.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("Risk of Post-discharge Venous Thromboembolism after Bariatric Surgery")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://pubmed.ncbi.nlm.nih.gov/28009739/")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/RiskOfPostDischargeVenousThromboembolismAfterBariatricSurgery/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                }}
+            
+        }
+        
+        
+        struct GS12: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Aminian A, Brethauer SA, Sharafkhah M, Schauer PR. Development of a sleeve gastrectomy risk calculator . Surg Obes Relat Dis. 2015 Jul-Aug;11(4):758-64. doi: 10.1016/j.soard.2014.12.012. Epub 2014 Dec 19")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("Sleeve Gastrectomy Risk Calculator")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://www.sciencedirect.com/science/article/abs/pii/S1550728914004948")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/SleeveGastrectomyRiskCalculator/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                }}
+            
+        }
+        
+        struct GS13: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Aminian A, Brethauer S, Andalib A, et al. Individualized Metabolic Surgery Score: Procedure Selection Based on Diabetes Severity. 2017. Ann Surg 266(4): 650-657.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("Individualized Metabolic Surgery Score for Bariatric Procedure Selection")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://pubmed.ncbi.nlm.nih.gov/28742680/")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/Metabolic_Surgery_Score/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                }}
+            
+        }
+        
+        
+        
+        
+        
+        
+        struct PSY1: View {
+            var body: some View {
+                
+                VStack{
+                    NavigationLink(destination:
+                                    PSY2()) {
+                        
+                        Text("Psychiatry")
+                            .fontWeight(.heavy)
+                            .frame(width:350, height: 50)
+                            .background(RoundedRectangle(cornerRadius: 12).fill(Color.indigo)
+                                .shadow(radius:3)
+                                .opacity(0.6))
+                            .foregroundColor(.black)
+                        
+                    }
+                }
+            }
+        }
+        
+        
+        struct PSY2: View {
+            var body: some View {
+                
+                ZStack{
+                    Color.white
+                        .opacity(0.5)
+                    
+                    Text("Psychiatry")
+                        .offset(y: -300)
+                        .font(.system(size: 35, weight: .heavy))
+                        .foregroundColor(.black)
+                    
+                    ScrollView (.vertical, showsIndicators: false){
+                        
+                        
+                        VStack (spacing: 3) {
+                            NavigationLink(destination: PSY6()) {
+                                Text("FDG metabolic parameter-based models for predicting recurrence after upfront surgery in synchronous colorectal cancer liver metastasis")
+                                    .frame(width:350, height:100)
+                                    .background(RoundedRectangle(cornerRadius: 12).fill(Color.white)
+                                        .shadow(radius:3))
+                                    .foregroundColor(.black)
+                                    .padding(.top, 200)
+                                    .multilineTextAlignment(.leading)
+                                
+                                
+                            }
+                            
+                            
+                            
+                            NavigationLink(destination: PSY7()) {
+                                Text("Bipolar-related Mood Disorders Risk Calculator for Individuals at Familial Risk (a parent with confirmed bipolar disorder)")
+                                    .frame(width:350, height:75)
+                                    .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                    .foregroundColor(.black)
+                                    .multilineTextAlignment(.leading)
+                                
+                            }
+                            
+                            VStack (spacing: 3) {
+                                NavigationLink(destination: PSY8()) {
+                                    Text("An Individualized Risk Calculator for Psychosis")
+                                        .frame(width:350, height:75)
+                                        .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                        .foregroundColor(.black)
+                                        .multilineTextAlignment(.leading)
+                                    
+                                }
+                                
+                            }}}
+                    
+                }
+            }
+        }
+        
+        
+        struct PSY6: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Reference: Lee HS, Kwon HW, Lim SB, et al. FDG metabolic parameter-based models for predicting recurrence after upfront surgery in synchronous colorectal cancer liver metastasis. 2022. Online ahead of print. doi: 10.1007/s00330-022-09141-3.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    Text("FDG metabolic parameter-based models for predicting recurrence after upfront surgery in synchronous colorectal cancer liver metastasis.")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://pubmed.ncbi.nlm.nih.gov/36114846/")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://cpmodel.shinyapps.io/SCLM/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                }}
+            
+        }
+        
+        
+        
+        
+        struct PSY7: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Bipolar Disorder Risk Calculator. Queen's University. 2022.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("Bipolar-related Mood Disorders Risk Calculator for Individuals at Familial Risk (a parent with confirmed bipolar disorder)")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://www.queensu.ca/u-flourish/bipolar-disorder-risk-calculator")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://www.queensu.ca/u-flourish/bipolar-calculator/calculator/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                }}
+            
+        }
+        
+        
+        
+        
+        struct PSY8: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Cannon TD, Yu C, Addington J, et al. An Individualized Risk Calculator for Research in Prodromal Psychosis. 2016. Am J Psychiatry 173(10):980-988.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    Text("An Individualized Risk Calculator for Psychosis")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://pubmed.ncbi.nlm.nih.gov/27363508/")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/napls/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                }}
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        struct DER1: View {
+            var body: some View {
+                
+                VStack{
+                    NavigationLink(destination:
+                                    DER2()) {
+                        
+                        Text("Dermatology")
+                            .fontWeight(.heavy)
+                            .frame(width:350, height: 50)
+                            .background(RoundedRectangle(cornerRadius: 12).fill(Color.indigo)
+                                .shadow(radius:3)
+                                .opacity(0.6))
+                            .foregroundColor(.black)
+                        
+                    }
+                }
+            }
+        }
+        
+        struct DER2: View {
+            var body: some View {
+                
+                ZStack{
+                    Color.white
+                        .opacity(0.5)
+                    
+                    Text("Dermatology")
+                        .offset(y: -300)
+                        .font(.system(size: 35, weight: .heavy))
+                        .foregroundColor(.black)
+                    
+                    
+                    VStack (spacing: 3) {
+                        NavigationLink(destination: DER6()) {
+                            Text("Novel Metabolic Signature-Based Prognostic Model for Uveal Melanoma")
+                                .frame(width:350, height:75)
+                                .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.leading)
+                        }}
+                    
+                }
+            }
+        }
+        
+        
+        
+        
+        struct DER6: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Shi K, Li X, Zhang J, et al. Development and Validation of a Novel Metabolic Signature-Based Prognostic Model for Uveal Melanoma.2022. Transl Vis Sci Technol 11(5):9.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("Development and Validation of a Novel Metabolic Signature-Based Prognostic Model for Uveal Melanoma")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9100464/")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://keshi2021.shinyapps.io/dynnomapp/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                }}
+            
+        }
+        
+        
+        struct NSG1: View {
+            var body: some View {
+                
+                VStack{
+                    NavigationLink(destination:
+                                    NSG2()) {
+                        
+                        Text("Neurosurgery")
+                            .fontWeight(.heavy)
+                            .frame(width:350, height: 50)
+                            .background(RoundedRectangle(cornerRadius: 12).fill(Color.indigo)
+                                .shadow(radius:3)
+                                .opacity(0.6))
+                            .foregroundColor(.black)
+                        
+                    }
+                }
+            }
+        }
+        
+        struct NSG2: View {
+            var body: some View {
+                
+                ZStack{
+                    Color.white
+                        .opacity(0.5)
+                    
+  
+                    
+                    
+                    
+                    
+                    ScrollView (.vertical, showsIndicators: true){
+                        
+                        
+                        VStack (spacing: 0) {
+                            
+                            Group {
+                                
+                                Text("Spine")
+                                    .font(.system(size: 30, weight: .heavy))
+                                    .foregroundColor(.black)
+                                    .offset(x: -140)
+                                    .multilineTextAlignment(.leading)
+                                
+                                NavigationLink(destination: NSG6()) {
+                                    Text("Evaluating transfusion risk after spinal fusion for spinal tuberculosis")
+                                        .frame(width:400, height:75)
+                                        .background(RoundedRectangle(cornerRadius: 3).fill(Color.white))
+                                        .foregroundColor(.black)
+                                        .multilineTextAlignment(.center)
+                                        .border(Color.gray, width: 1)
+                                }
+                                
+                                NavigationLink(destination: NSG7()) {
+                                    Text("Predicting Postoperative Clinical and Quality-of-life Outcomes after Cervical Spine Surgery")
+                                        .frame(width:400, height:75)
+                                        .background(RoundedRectangle(cornerRadius: 3).fill(Color.white))
+                                        .foregroundColor(.black)
+                                        .multilineTextAlignment(.center)
+                                        .border(Color.gray, width: 1)
+                                    
+                                }
+                         
+                     
+                                    
+                                    Text("Neuro-Oncology")
+                                        .font(.system(size: 30, weight: .heavy))
+                                        .foregroundColor(.black)
+                                        .offset(x: -70)
+                                        .multilineTextAlignment(.leading)
+                                    
+                                    
+                                    
+                                    NavigationLink(destination: NSG8()) {
+                                        Text("Brain Tumor Postoperative Discharge Disposition Calculator")
+                                            .frame(width:400, height:75)
+                                            .background(RoundedRectangle(cornerRadius: 3).fill(Color.white))
+                                            .foregroundColor(.black)
+                                            .multilineTextAlignment(.center)
+                                            .border(Color.gray, width: 1)
+                                    }
+                                    
+                            
+                                        NavigationLink(destination: NSG9()) {
+                                            Text("Extended LOS, High Hospital Charges and Nonroutine Doscharges for Skull Base Meningioma Surgery")
+                                                .frame(width:400, height:75)
+                                                .background(RoundedRectangle(cornerRadius: 3).fill(Color.white))
+                                                .foregroundColor(.black)
+                                                .multilineTextAlignment(.center)
+                                                .border(Color.gray, width: 1)
+                                            
+                                        }
+                                    
+                   
+                                NavigationLink(destination: NSG10()) {
+                                    Text("Predicting Overall Survival in Glioblastoma Patients")
+                                        .frame(width:400, height:75)
+                                        .background(RoundedRectangle(cornerRadius: 3).fill(Color.white))
+                                        .foregroundColor(.black)
+                                        .multilineTextAlignment(.center)
+                                        .border(Color.gray, width: 1)
+                                }
+                            Group{
+                  
+                                    
+                                    Text("Epilepsy Surgery")
+                                        .font(.system(size: 30, weight: .heavy))
+                                        .foregroundColor(.black)
+                                        .offset(x: -65)
+                                        .multilineTextAlignment(.leading)
+                                    
+                                    NavigationLink(destination: NSG11()) {
+                                        Text("Probability of Achieving Seizure Freedome in Epilepsy Surgery")
+                                            .frame(width:400, height:75)
+                                            .background(RoundedRectangle(cornerRadius: 3).fill(Color.white))
+                                            .foregroundColor(.black)
+                                            .multilineTextAlignment(.center)
+                                            .border(Color.gray, width: 1)
+                                    }
+                                
+                               
+                                    NavigationLink(destination: NSG12()) {
+                                        Text("Probability of postoperative declines in naming, verbal memory, and mood in epilepsy surgery")
+                                            .frame(width:400, height:75)
+                                            .background(RoundedRectangle(cornerRadius: 3).fill(Color.white))
+                                            .foregroundColor(.black)
+                                            .multilineTextAlignment(.center)
+                                            .border(Color.gray, width: 1)
+                                        
+                                    }
+                                
+                               
+                                    NavigationLink(destination: NSG13()) {
+                                        Text("Temporal lobe resections that spare MRI-normal hippocampus: chance of seizure-freedom one year after surgery and risk of naming decline")
+                                            .frame(width:400, height:75)
+                                            .background(RoundedRectangle(cornerRadius: 3).fill(Color.white))
+                                            .foregroundColor(.black)
+                                            .multilineTextAlignment(.center)
+                                            .border(Color.gray, width: 1)
+                                    
+                                    }}
+                                
+                                
+                            Group{
+                           
+                                    Text("Academic")
+                                        .font(.system(size: 30, weight: .heavy))
+                                        .foregroundColor(.black)
+                                        .offset(x: -100)
+                                        .multilineTextAlignment(.leading)
+                                    
+                                    
+                                    
+                                    NavigationLink(destination: NSG14()) {
+                                        Text("Neurosurgery Academic Career Trajectory Calculator")
+                                            .frame(width:400, height:75)
+                                            .background(RoundedRectangle(cornerRadius: 3).fill(Color.white))
+                                            .foregroundColor(.black)
+                                            .multilineTextAlignment(.center)
+                                            .border(Color.gray, width: 1)
+                                    
+                                    }}}
+                            
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        struct NSG6: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Dong S, Li W, Tang ZR, et al. Development and validation of a novel predictive model and web calculator for evaluating transfusion risk after spinal fusion for spinal tuberculosis: a retrospective cohort study. 2021. BMC Musculoskeletal Disord 22(1):825.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    Text("Evaluating transfusion risk after spinal fusion for spinal tuberculosis")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://pubmed.ncbi.nlm.nih.gov/34563170/")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://drwenleli.shinyapps.io/STTapp/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                }}
+            
+        }
+        
+        struct NSG7: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Daniel Lubelski, Vincent Alentado, Amy S Nowacki, Michael Shriver, Kalil G Abdullah, Michael P Steinmetz, Edward C Benzel, Thomas E Mroz, Preoperative Nomograms Predict Patient-Specific Cervical Spine Surgery Clinical and Quality of Life Outcomes , Neurosurgery, Volume 83, Issue 1, July 2018, Pages 104–113, https://doi.org/10.1093/neuros/nyx343")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("Predicting Postoperative Clinical and Quality-of-life Outcomes after Cervical Spine Surgery")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://journals.lww.com/neurosurgery/pages/default.aspx")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/PatientsEligibleforCervicalSpineSurgery/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                    
+                    
+                }}
+        }
+        
+        
+        
+        
+        struct NSG8: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Samplaski MK, Yu C, Kattan MW, Lo KC, Grober ED, Zini A, Lau S, Jarvi KA. Nomograms for predicting changes in semen parameters in infertile men after varicocele repair . Fertil Steril. 2014 Jul;102(1):68-74. doi: 10.1016/j.fertnstert.2014.03.046. Epub 2014 May 10")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    Text("Brain Tumor Postoperative Discharge Disposition Calculator")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://www.sciencedirect.com/science/article/abs/pii/S1878875020323937")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://neurooncsurgery.shinyapps.io/discharge_calc/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                    
+                    
+                }}
+        }
+        
+        
+        
+        
+        struct NSG9: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Jimenez A, Khalafallah A, Lam S, et al. Predicting High-Value Care Outcomes After Surgery for Skull Base Meningiomas. 2021. World Neurosurgery; 149: 427-436.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("Predicting High-Value Care Outcomes After Surgery for Skull Base Meningiomas")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://pubmed.ncbi.nlm.nih.gov/33567369/")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://neurooncsurgery3.shinyapps.io/high_value_skull_base_calc/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                    
+                    
+                }}
+        }
+        
+        
+        
+        struct NSG10: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    
+                    Text("Senders J, Staples P, Mehrtash P, et al. An Online Calculator for the Prediction of Survival in Glioblastoma Patients Using Classical Statistics and Machine Learning. 2020. Neurosurgery 86(2): 184-192.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("An Online Calculator for the Prediction of Survival in Glioblastoma Patients Using Classical Statistics and Machine Learning")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://journals.lww.com/neurosurgery/Fulltext/2020/02000/An_Online_Calculator_for_the_Prediction_of.34.aspx")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://cnoc-bwh.shinyapps.io/gbmsurvivalpredictor/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                    
+                    
+                }}
+        }
+        
+        
+        
+        
+        struct NSG11: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Jehi L, Yardi R, Chagin K, Tassi L, Russo GL, Worrell G, Hu W, Cendes F, Morita M, Bartolomei F, Chauvel P, Najm I, Gonzalez-Martinez J, Bingaman W, Kattan MW Development and validation of nomograms to provide individualised predictions of seizure outcomes after epilepsy surgery: a retrospective analysis. Lancet Neurol. 2015 Mar;14(3):283-90.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("Prediction Seizure-Free Outcomes after Epilepsy Surgery")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://pubmed.ncbi.nlm.nih.gov/25638640/")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/FreedomFromSeizureRecurrenceAfterSurgery/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                    
+                    
+                }}
+        }
+        
+        
+        
+        
+        struct NSG12: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    
+                    Text("Busch, R. M., Hogue, O., Kattan, M. W., Hamberger, M., Drane, D. L., Hermann, B., Kim, M., Ferguson, L., Bingaman, W., Gonzalez-Martinez, J., Najm, I. M., & Jehi, L. (2018). Nomograms to predict naming decline after temporal lobe surgery in adults with epilepsy. Neurology, 97(3), e263-e274. PMID: 34011574.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("Predicts the probabilities of postoperative declines in naming, verbal memory, and mood")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6282231/")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/CognitiveAndMoodAfterEpilepsySurgery/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                    
+                    
+                }}
+        }
+        
+        
+        
+        
+        struct NSG13: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Morita-Sherman, M., Louis, S., Vegh, D., Busch, R.M., Ferguson, L., Yardi, R., Bingaman, J., Bingaman, W., Gonzalez-Martinez, J., Bulacio, J., Najm, I., Jones, S., Zajicheck, A., Kattan, M., Blumcke, I., Cendes, F., & Jehi, L. (2020). Seizure and cognitive outcomes following temporal lobe resections that spare versus remove a MRI-normal hippocampus. Epilepsia. 61(11): 2545-2557, PMID: 33063852.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("Temporal lobe resections that spare versus remove a MRI-normal hippocampus: chance of seizure-freedom one year after surgery and risk of naming decline")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6282231/")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/SparingHippocampus/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                    
+                    
+                }}
+        }
+        
+        
+        
+        
+        struct NSG14: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    
+                    Text("Khalafallah AM, Jimenez AE, Horowitz MA, et al. An Online Calculator for Predicting Academic Career Trajectory in Neurosurgery in the United States. 2021. World Neurosurgery 145: 155-162. ")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    Text("Neurosurgery Academic Career Trajectory Calculator")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://pubmed.ncbi.nlm.nih.gov/33031965/")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://neurooncsurgery.shinyapps.io/academic_calculator/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                    
+                    
+                }}
+        }
+        
+        
+        
+        
+        struct UR1: View {
+            var body: some View {
+                
+                VStack{
+                    NavigationLink(destination:
+                                    UR2()) {
+                        
+                        Text("Urology")
+                            .fontWeight(.heavy)
+                            .frame(width:350, height: 50)
+                            .background(RoundedRectangle(cornerRadius: 12).fill(Color.indigo)
+                                .shadow(radius:3)
+                                .opacity(0.6))
+                            .foregroundColor(.black)
+                        
+                    }
+                }
+            }
+        }
+        
+        struct UR2: View {
+            var body: some View {
+                
+                ZStack{
+                    Color.white
+                        .opacity(0.5)
+                    
+                    Text("Urology")
+                        .offset(y: -300)
+                        .font(.system(size: 35, weight: .heavy))
+                        .foregroundColor(.black)
+                    
+                    
+                    VStack (spacing: 3) {
+                        NavigationLink(destination: UR6()) {
+                            Text("Predicting Acute Urinary Retention or Surgical Intervention within 2 years (with or without Dutasteride)")
+                                .frame(width:350, height:75)
+                                .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.leading)
+                        }
+                        
+                        NavigationLink(destination: UR7()) {
+                            Text("Predicting 5-Year Recurrence-Free Survival after Radical Cystectomy for Bladder Cancer")
+                                .frame(width:350, height:75)
+                                .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.leading)
+                        }
+                        
+                        VStack (spacing: 25) {
+                            NavigationLink(destination: UR8()) {
+                                Text("Predicting Changes in Semen Parameters in Infertile Men After Varicocele Repair")
+                                    .frame(width:350, height:75)
+                                    .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                    .foregroundColor(.black)
+                                    .multilineTextAlignment(.leading)
+                            }
+                            
+                            
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        struct UR6: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Slawin KM, Kattan MW, Roehrborn CG, Wilson T. Development of nomogram to predict acute urinary retention or surgical intervention, with or without dutasteride therapy, in men with benign prostatic hyperplasia . Urology. 2006 Jan;67(1):84-8")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("Predicting Acute Urinary Retention or Surgical Intervention within 2 years (with or without Dutasteride)")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://www.sciencedirect.com/science/article/abs/pii/S0090429505010071")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/BenignProstaticHyperplasia/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                }}
+            
+        }
+        
+        struct UR7: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("International Bladder Cancer Nomogram Consortium, Bochner BH, Kattan MW, Vora KC. Postoperative nomogram predicting risk of recurrence after radical cystectomy for bladder cancer . J Clin Oncol. 2006 Aug 20;24(24):3967-72. Epub 2006 Jul 24. Erratum in: J Clin Oncol. 2007 Apr 10;25(11):1457")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("Predicting 5-Year Recurrence-Free Survival after Radical Cystectomy for Bladder Cancer")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://ascopubs.org/doi/pdf/10.1200/jco.2005.05.3884")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/bladderCancer/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                    
+                    
+                }}
+        }
+        
+        
+        
+        
+        struct UR8: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    
+                    Text("Samplaski MK, Yu C, Kattan MW, Lo KC, Grober ED, Zini A, Lau S, Jarvi KA. Nomograms for predicting changes in semen parameters in infertile men after varicocele repair . Fertil Steril. 2014 Jul;102(1):68-74. doi: 10.1016/j.fertnstert.2014.03.046. Epub 2014 May 10")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("Predicting Changes in Semen Parameters in Infertile Men After Varicocele Repair")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://pubmed.ncbi.nlm.nih.gov/24825425/")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/Infertility/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                    
+                    
+                }}
+        }
+        
+        
+        struct CR1: View {
+            var body: some View {
+                
+                VStack{
+                    NavigationLink(destination:
+                                    CR2()) {
+                        
+                        Text("Critical Care")
+                            .fontWeight(.heavy)
+                            .frame(width:350, height: 50)
+                            .background(RoundedRectangle(cornerRadius: 12).fill(Color.indigo)
+                                .shadow(radius:3)
+                                .opacity(0.6))
+                            .foregroundColor(.black)
+                        
+                    }
+                }
+            }
+        }
+        
+        struct CR2: View {
+            var body: some View {
+                
+                ZStack{
+                    Color.white
+                        .opacity(0.5)
+                    
+                    Text("Critical Care")
+                        .offset(y: -300)
+                        .font(.system(size: 35, weight: .heavy))
+                        .foregroundColor(.black)
+                    
+                    
+                    VStack (spacing: 3) {
+                        NavigationLink(destination: CR6()) {
+                            Text("Predicting discharge to a long-term acute care hospital after admission to an intensive care unit")
+                                .frame(width:350, height:75)
+                                .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.leading)
+                            
+                        }
+                        
+                        
+                    }
+                }
+            }
+        }
+        
+        
+        
+        struct CR6: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Szubski CR, Tellez A, Klika AK, Xu M, Kattan MW, Guzman JA, Barsoum WK. Predicting discharge to a long-term acute care hospital after admission to an intensive care unit. Am J Crit Care. 2014 Jul;23(4):e46-53. doi: 10.4037/ajcc2014985.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("Predicting discharge to a long-term acute care hospital after admission to an intensive care unit")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://pubmed.ncbi.nlm.nih.gov/24986179/")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/LTACHafterICU/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                }}
+            
+        }
+        
+        
+        struct CA1: View {
+            var body: some View {
+                
+                VStack{
+                    NavigationLink(destination:
+                                    CA2()) {
+                        
+                        Text("Cardiology")
+                            .fontWeight(.heavy)
+                            .frame(width:350, height: 50)
+                            .background(RoundedRectangle(cornerRadius: 12).fill(Color.indigo)
+                                .shadow(radius:3)
+                                .opacity(0.6))
+                            .foregroundColor(.black)
+                        
+                    }
+                }
+            }
+        }
+        
+        struct CA2: View {
+            var body: some View {
+                
+                ZStack{
+                    Color.white
+                        .opacity(0.5)
+                    
+                    Text("Cardiology")
+                        .offset(y: -300)
+                        .font(.system(size: 35, weight: .heavy))
+                        .foregroundColor(.black)
+                    
+                    
+                    VStack (spacing: 3) {
+                        NavigationLink(destination: CA6()) {
+                            Text("30-day and 12-month Outcomes after Discharge for an Acute Coronary Syndrome")
+                                .frame(width:350, height:75)
+                                .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.leading)
+                            
+                        }
+                        
+                        NavigationLink(destination: CA7()) {
+                            Text("Likelihood of Cerebrovascular Accidents (CVA) in patients undergoing PCI")
+                                .frame(width:350, height:75)
+                                .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.leading)
+                            
+                        }
+                        
+                        VStack (spacing: 3) {
+                            NavigationLink(destination: CA8()) {
+                                Text("Predicting 30-Day All-Cause Mortality After Transvenous Pacemaker and Defibrillator Lead Extraction")
+                                    .frame(width:350, height:75)
+                                    .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                    .foregroundColor(.black)
+                                    .multilineTextAlignment(.leading)
+                                
+                            }
+                            
+                            VStack (spacing: 3) {
+                                NavigationLink(destination: CA9()) {
+                                    Text("Predicting Long-Term Survival (For Suspected Patients with a Normal Electrocardiogram")
+                                        .frame(width:350, height:75)
+                                        .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                        .foregroundColor(.black)
+                                        .multilineTextAlignment(.leading)
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            
+            struct CA6: View {
+                var body: some View {
+                    
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 3)
+                            .fill(.cyan)
+                            .frame(width: 350, height: 200)
+                            .opacity(0.6)
+                            .offset(y: +210)
+                        
+                        RoundedRectangle(cornerRadius: 3)
+                            .fill(.cyan)
+                            .frame(width: 350, height: 250)
+                            .opacity(0.6)
+                            .offset(y: -130)
+                        
+                        Text("Calculator")
+                            .offset(y: -280)
+                            .offset(x: -85)
+                            .multilineTextAlignment(.leading)
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                            .font(.system(size: 35, design:.default))
+                        
+                        Text("Kumbhani DJ, Wells BJ, Lincoff AM, et al. Predictive models for short- and long-term adverse outcomes following discharge in a contemporary population with acute coronary syndromes. Am J Cardiovasc Dis 3(1): 39-52.")
+                            .frame(width:320, height: 130)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 3)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: +190)
+                            .padding(4)
+                            .multilineTextAlignment(.leading)
+                            .font(.system(size: 15, design:.default))
+                        
+                        
+                        Text("30-day and 12-month Outcomes after Discharge for an Acute Coronary Syndrome")
+                            .frame(width:320, height: 125)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 3)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: -180)
+                            .padding(4)
+                            .multilineTextAlignment(.leading)
+                            .fontWeight(.bold)
+                            .font(.system(size: 20, design:.default))
+                        
+                        Link("Take me to the Publication", destination: URL(string: "https://pubmed.ncbi.nlm.nih.gov/23467552/")!)
+                            .frame(width:320, height: 30)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: +280)
+                            .font(.system(size: 15, design:.default))
+                        
+                        
+                        Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/ACS/")!)
+                            .frame(width:320, height: 75)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.white).opacity(1.0))
+                            .offset(y: -60)
+                            .fontWeight(.bold)
+                            .font(.system(size: 20, design:.default))
+                        
+                    }}
+                
+            }
+            
+            struct CA7: View {
+                var body: some View {
+                    
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 3)
+                            .fill(.cyan)
+                            .frame(width: 350, height: 200)
+                            .opacity(0.6)
+                            .offset(y: +210)
+                        
+                        RoundedRectangle(cornerRadius: 3)
+                            .fill(.cyan)
+                            .frame(width: 350, height: 250)
+                            .opacity(0.6)
+                            .offset(y: -130)
+                        
+                        Text("Calculator")
+                            .offset(y: -280)
+                            .offset(x: -85)
+                            .multilineTextAlignment(.leading)
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                            .font(.system(size: 35, design:.default))
+                        
+                        Text("Shivaraju A, Yu C, Kattan MW, Xie H, Shroff AR, Vidovich MI. Temporal Trends in Percutaneous Coronary Intervention-Associated Acute Cerebrovascular Accident (from the 1998 to 2008 Nationwide Inpatient Sample Database) . Am J Cardiol. 2014 Jul 15;114(2):206-13. doi: 10.1016/j.amjcard.2014.04.044. Epub 2014 May 6.")
+                            .frame(width:320, height: 130)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 3)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: +190)
+                            .padding(4)
+                            .multilineTextAlignment(.leading)
+                            .font(.system(size: 15, design:.default))
+                        
+                        
+                        Text("Likelihood of Cerebrovascular Accidents (CVA) in patients undergoing PCI")
+                            .frame(width:320, height: 125)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 3)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: -180)
+                            .padding(4)
+                            .multilineTextAlignment(.leading)
+                            .fontWeight(.bold)
+                            .font(.system(size: 20, design:.default))
+                        
+                        Link("Take me to the Publication", destination: URL(string: "https://pubmed.ncbi.nlm.nih.gov/24952927/")!)
+                            .frame(width:320, height: 30)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: +280)
+                            .font(.system(size: 15, design:.default))
+                        
+                        
+                        Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/PredictingTheLikelihoodOfCerebrovascularAccidents/")!)
+                            .frame(width:320, height: 75)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.white).opacity(1.0))
+                            .offset(y: -60)
+                            .fontWeight(.bold)
+                            .font(.system(size: 20, design:.default))
+                        
+                        
+                        
+                        
+                    }}
+            }
+            
+            
+            
+            
+            struct CA8: View {
+                var body: some View {
+                    
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 3)
+                            .fill(.cyan)
+                            .frame(width: 350, height: 200)
+                            .opacity(0.6)
+                            .offset(y: +210)
+                        
+                        RoundedRectangle(cornerRadius: 3)
+                            .fill(.cyan)
+                            .frame(width: 350, height: 250)
+                            .opacity(0.6)
+                            .offset(y: -130)
+                        
+                        Text("Calculator")
+                            .offset(y: -280)
+                            .offset(x: -85)
+                            .multilineTextAlignment(.leading)
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                            .font(.system(size: 35, design:.default))
+                        
+                        Text("Michael P. Brunner, MD, Changhong Yu, MS, Ayman A. Hussein, MD, Khaldoun G. Tarakji, MD, MPH, Oussama M. Wazni, MD, Michael W. Kattan, PhD, Bruce L.Wilkoff, MD. Nomogram for Predicting 30-Day All-Cause Mortality After Transvenous Pacemaker and Defibrillator Lead Extraction . j.hrthm.2015.07.024. Epub 2015 Jul 17.")
+                            .frame(width:320, height: 130)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 3)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: +190)
+                            .padding(4)
+                            .multilineTextAlignment(.leading)
+                            .font(.system(size: 15, design:.default))
+                        
+                        
+                        Text("Predicting 30-Day All-Cause Mortality After Transvenous Pacemaker and Defibrillator Lead Extraction")
+                            .frame(width:320, height: 125)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 3)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: -180)
+                            .padding(4)
+                            .multilineTextAlignment(.leading)
+                            .fontWeight(.bold)
+                            .font(.system(size: 20, design:.default))
+                        
+                        Link("Take me to the Publication", destination: URL(string: "https://pubmed.ncbi.nlm.nih.gov/26190318/")!)
+                            .frame(width:320, height: 30)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: +280)
+                            .font(.system(size: 15, design:.default))
+                        
+                        
+                        Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/MortalityAfterPacemakerAndDefibrillator/")!)
+                            .frame(width:320, height: 75)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.white).opacity(1.0))
+                            .offset(y: -60)
+                            .fontWeight(.bold)
+                            .font(.system(size: 20, design:.default))
+                        
+                        
+                        
+                        
+                    }}
+            }
+            
+            
+            struct CA9: View {
+                var body: some View {
+                    
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 3)
+                            .fill(.cyan)
+                            .frame(width: 350, height: 200)
+                            .opacity(0.6)
+                            .offset(y: +210)
+                        
+                        RoundedRectangle(cornerRadius: 3)
+                            .fill(.cyan)
+                            .frame(width: 350, height: 250)
+                            .opacity(0.6)
+                            .offset(y: -130)
+                        
+                        Text("Calculator")
+                            .offset(y: -280)
+                            .offset(x: -85)
+                            .multilineTextAlignment(.leading)
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                            .font(.system(size: 35, design:.default))
+                        
+                        Text("Lauer MS, Pothier CE, Magid DJ, Smith SS, Kattan MW. An externally validated model for predicting long-term survival after exercise treadmill testing in patients with suspected coronary artery disease and a normal electrocardiogram . Ann Intern Med. 2007 Dec 18;147(12):821-8.")
+                            .frame(width:320, height: 130)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 3)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: +190)
+                            .padding(4)
+                            .multilineTextAlignment(.leading)
+                            .font(.system(size: 15, design:.default))
+                        
+                        
+                        Text("Predicting Long-Term Survival (For Suspected Patients with a Normal Electrocardiogram")
+                            .frame(width:320, height: 125)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 3)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: -180)
+                            .padding(4)
+                            .multilineTextAlignment(.leading)
+                            .fontWeight(.bold)
+                            .font(.system(size: 20, design:.default))
+                        
+                        Link("Take me to the Publication", destination: URL(string: "https://www.acpjournals.org/doi/pdf/10.7326/0003-4819-147-12-200712180-00001")!)
+                            .frame(width:320, height: 30)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: +280)
+                            .font(.system(size: 15, design:.default))
+                        
+                        
+                        Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/SuspectedCoronaryArteryDiseaseLongTermSurvivalwNormalEKG/")!)
+                            .frame(width:320, height: 75)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.white).opacity(1.0))
+                            .offset(y: -60)
+                            .fontWeight(.bold)
+                            .font(.system(size: 20, design:.default))
+                        
+                        
+                        
+                        
+                    }}
+            }
+            
+            
+            
+            
+            
+            
+            
+        }
+        
+        struct GE1: View {
+            var body: some View {
+                
+                VStack{
+                    NavigationLink(destination:
+                                    GE2()) {
+                        
+                        Text("Gastroenterology")
+                            .fontWeight(.heavy)
+                            .frame(width:350, height: 50)
+                            .background(RoundedRectangle(cornerRadius: 12).fill(Color.indigo)
+                                .shadow(radius:3)
+                                .opacity(0.6))
+                            .foregroundColor(.black)
+                        
+                    }
+                }
+            }
+        }
+        
+        
+        struct GE2: View {
+            var body: some View {
+                
+                ZStack{
+                    Color.white
+                        .opacity(0.5)
+                    
+                    Text("Gastroenterology")
+                        .offset(y: -300)
+                        .font(.system(size: 35, weight: .heavy))
+                        .foregroundColor(.black)
+                    
+                    
+                    VStack (spacing: 3) {
+                        NavigationLink(destination: GE6()) {
+                            Text("Colorectal Cancer - 10 year Predicted Risk Online (CRC-PRO)")
+                                .frame(width:350, height:75)
+                                .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.leading)
+                            
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        
+        struct GE6: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Wells BJ, Kattan MW, Cooper GS, Jackson L, Koroukian S. ColoRectal Cancer Predicted Risk Online (CRC-PRO) calculator using data from the Multi-Ethnic Cohort Study . J Am Board Fam Med. 2014 Jan-Feb;27(1):42-55. doi: 10.3122/jabfm.2014.01.130040.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("Colorectal Cancer - 10 year Predicted Risk Online (CRC-PRO)")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://www.jabfm.org/content/27/1/42.full")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/ColorectalCancer/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                }}
+            
+        }
+        
+        struct END1: View {
+            var body: some View {
+                
+                VStack{
+                    NavigationLink(destination:
+                                    END2()) {
+                        
+                        Text("Endocrinology")
+                            .fontWeight(.heavy)
+                            .frame(width:350, height: 50)
+                            .background(RoundedRectangle(cornerRadius: 12).fill(Color.indigo)
+                                .shadow(radius:3)
+                                .opacity(0.6))
+                            .foregroundColor(.black)
+                        
+                    }
+                }
+            }
+        }
+        
+        struct END2: View {
+            var body: some View {
+                
+                ZStack{
+                    Color.white
+                        .opacity(0.5)
+                    
+                    Text("Endocrinology")
+                        .offset(y: -300)
+                        .font(.system(size: 35, weight: .heavy))
+                        .foregroundColor(.black)
+                    
+                    
+                    VStack (spacing: 3) {
+                        NavigationLink(destination: END6()) {
+                            Text("Decision-making tool of adding a second-line therapy to metformin for a patient with Type 2 DM")
+                                .frame(width:350, height:75)
+                                .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.leading)
+                            
+                        }
+                        
+                        NavigationLink(destination: END7()) {
+                            Text("Diabetes - Predicting 5-Year Morbidity and Mortality Risk")
+                                .frame(width:350, height:75)
+                                .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.leading)
+                            
+                        }
+                        
+                        VStack (spacing: 25) {
+                            NavigationLink(destination: END8()) {
+                                Text("Diabetes - Predicting 6-Year Mortality Risk")
+                                    .frame(width:350, height:75)
+                                    .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                    .foregroundColor(.black)
+                                    .multilineTextAlignment(.leading)
+                                
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        struct END6: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("El Sanadi CE, Pantalone KM, Ji X, et al. Development and Internal Validation of a Prediction Tool to Assist Clinicians selecting Second-Line Therapy Following Metformin Monotherapy for Type 2 Diabetes. Endocr Pract 27(4):334-241.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    Text("Decision-making tool of adding a second-line therapy to metformin for a patient with Type 2 DM")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://pubmed.ncbi.nlm.nih.gov/33685669/")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/Type2DiabetesSecondTherapy/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                }}
+            
+        }
+        
+        struct END7: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Wells BJ, Roth R, Nowacki AS, Arrigain S, Yu C, Rosenkrans WA, Jr, Kattan MW. Prediction of morbidity and mortality in patients with type 2 diabetes. PeerJ. 2013;1:e87.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("Diabetes - Predicting 5-Year Morbidity and Mortality Risk")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3685323/")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/Type2DiabetesMorbidityAndMortality/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                    
+                    
+                }}
+        }
+        
+        
+        
+        
+        struct END8: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Wells BJ, Jain A, Arrigain S, Yu C, Rosenkrans WA Jr, Kattan MW. Predicting 6-year mortality risk in patients with type 2 diabetes . Diabetes Care. 2008 Dec;31(12):2301-6. doi: 10.2337/dc08-1047. Epub 2008 Sep 22.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("Diabetes - Predicting 6-Year Mortality Risk")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://pubmed.ncbi.nlm.nih.gov/18809629/")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/Type2Diabetes/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                    
+                    
+                }}
+        }
+        
+        
+        struct IM1: View {
+            var body: some View {
+                
+                VStack{
+                    NavigationLink(destination:
+                                    IM2()) {
+                        
+                        Text("Internal Medicine")
+                            .fontWeight(.heavy)
+                            .frame(width:350, height: 50)
+                            .background(RoundedRectangle(cornerRadius: 12).fill(Color.indigo)
+                                .shadow(radius:3)
+                                .opacity(0.6))
+                            .foregroundColor(.black)
+                        
+                    }
+                }
+            }
+        }
+        
+        struct IM2: View {
+            var body: some View {
+                
+                ZStack{
+                    Color.white
+                        .opacity(0.5)
+                    
+                    Text("Internal Medicine")
+                        .offset(y: -300)
+                        .font(.system(size: 35, weight: .heavy))
+                        .foregroundColor(.black)
+                    
+                    
+                    VStack (spacing: 3) {
+                        NavigationLink(destination: IM6()) {
+                            Text("Predicting the probability of passing the American Board of Internal Medicine examination")
+                                .frame(width:350, height:75)
+                                .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.leading)
+                            
+                        }
+                        
+                    }
+                }
+            }
+        }
+        
+        
+        
+        struct IM6: View {
+            var body: some View {
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 200)
+                        .opacity(0.6)
+                        .offset(y: +210)
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(.cyan)
+                        .frame(width: 350, height: 250)
+                        .opacity(0.6)
+                        .offset(y: -130)
+                    
+                    Text("Calculator")
+                        .offset(y: -280)
+                        .offset(x: -85)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35, design:.default))
+                    
+                    Text("Brateanu A, Yu C, Kattan MW, Olender J, Nielsen C. A nomogram to predict the probability of passing the American Board of Internal Medicine examination . Med Educ Online. 2012 Oct 16;17:18810. doi: 10.3402/meo.v17i0.18810.")
+                        .frame(width:320, height: 130)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +190)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Text("Predicting the probability of passing the American Board of Internal Medicine examination")
+                        .frame(width:320, height: 125)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: -180)
+                        .padding(4)
+                        .multilineTextAlignment(.leading)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    Link("Take me to the Publication", destination: URL(string: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3475012/")!)
+                        .frame(width:320, height: 30)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .opacity(1.0))
+                        .offset(y: +280)
+                        .font(.system(size: 15, design:.default))
+                    
+                    
+                    Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/ABIM/")!)
+                        .frame(width:320, height: 75)
+                        .foregroundColor(.black)
+                        .background(RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white).opacity(1.0))
+                        .offset(y: -60)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20, design:.default))
+                    
+                    
+                }}
+            
+        }
+        
+        
+        
+        struct ID1: View {
+            var body: some View {
+                
+                VStack{
+                    NavigationLink(destination:
+                                    ID2()) {
+                        
+                        Text("Infectious Disease")
+                            .fontWeight(.heavy)
+                            .frame(width:350, height: 50)
+                            .background(RoundedRectangle(cornerRadius: 12).fill(Color.indigo)
+                                .shadow(radius:3)
+                                .opacity(0.6))
+                            .foregroundColor(.black)
+                        
+                    }
+                }
+            }
+        }
+        
+        struct ID2: View {
+            var body: some View {
+                
+                ZStack{
+                    Color.white
+                        .opacity(0.5)
+                    
+                    Text("Infectious Disease")
+                        .offset(y: -300)
+                        .font(.system(size: 35, weight: .heavy))
+                        .foregroundColor(.black)
+                    
+                    
+                    VStack (spacing: 3) {
+                        NavigationLink(destination: ID6()) {
+                            Text("Development and Validation of a Predictive Model for Severe COVID-19: A Case-Control Study in China")
+                                .frame(width:350, height:75)
+                                .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.leading)
+                            
+                        }
+                        
+                        NavigationLink(destination: ID7()) {
+                            Text("Predict COVID-19 test result")
+                                .frame(width:350, height:75)
+                                .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.leading)
+                            
+                        }
+                        
+                        VStack (spacing: 3) {
+                            NavigationLink(destination: ID8()) {
+                                Text("Predict Hospitalization Risk for COVID-19 Positive")
+                                    .frame(width:350, height:75)
+                                    .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                    .foregroundColor(.black)
+                                    .multilineTextAlignment(.leading)
+                                
+                            }
+                            
+                            VStack (spacing: 3) {
+                                NavigationLink(destination: ID9()) {
+                                    Text("COVID-19 Positive Risk of Severe COVID-19")
+                                        .frame(width:350, height:75)
+                                        .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:3))
+                                        .foregroundColor(.black)
+                                        .multilineTextAlignment(.leading)
+                                    
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+            }
+            
+            
+            struct ID6: View {
+                var body: some View {
+                    
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 3)
+                            .fill(.cyan)
+                            .frame(width: 350, height: 200)
+                            .opacity(0.6)
+                            .offset(y: +210)
+                        
+                        RoundedRectangle(cornerRadius: 3)
+                            .fill(.cyan)
+                            .frame(width: 350, height: 250)
+                            .opacity(0.6)
+                            .offset(y: -130)
+                        
+                        Text("Calculator")
+                            .offset(y: -280)
+                            .offset(x: -85)
+                            .multilineTextAlignment(.leading)
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                            .font(.system(size: 35, design:.default))
+                        
+                        Text("Meng Z, Wang M, Zhao Z, et al. Development and Validation of a Predictive Model for Severe COVID-19: A Case-Control Study in China. 2021. Front Med (Lausanne). 8:663145")
+                            .frame(width:320, height: 130)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 3)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: +190)
+                            .padding(4)
+                            .multilineTextAlignment(.leading)
+                            .font(.system(size: 15, design:.default))
+                        
+                        
+                        Text("Development and Validation of a Predictive Model for Severe COVID-19: A Case-Control Study in China")
+                            .frame(width:320, height: 125)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 3)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: -180)
+                            .padding(4)
+                            .multilineTextAlignment(.leading)
+                            .fontWeight(.bold)
+                            .font(.system(size: 20, design:.default))
+                        
+                        Link("Take me to the Publication", destination: URL(string: "https://pubmed.ncbi.nlm.nih.gov/34113636/")!)
+                            .frame(width:320, height: 30)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: +280)
+                            .font(.system(size: 15, design:.default))
+                        
+                        
+                        Link("Take me to the Calculator", destination: URL(string:"https://severeconid-19predction.shinyapps.io/SHINY/")!)
+                            .frame(width:320, height: 75)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.white).opacity(1.0))
+                            .offset(y: -60)
+                            .fontWeight(.bold)
+                            .font(.system(size: 20, design:.default))
+                        
+                        
+                    }}
+                
+            }
+            
+            struct ID7: View {
+                var body: some View {
+                    
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 3)
+                            .fill(.cyan)
+                            .frame(width: 350, height: 200)
+                            .opacity(0.6)
+                            .offset(y: +210)
+                        
+                        RoundedRectangle(cornerRadius: 3)
+                            .fill(.cyan)
+                            .frame(width: 350, height: 250)
+                            .opacity(0.6)
+                            .offset(y: -130)
+                        
+                        Text("Calculator")
+                            .offset(y: -280)
+                            .offset(x: -85)
+                            .multilineTextAlignment(.leading)
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                            .font(.system(size: 35, design:.default))
+                        
+                        Text("Jehi L, Ji X, Milinovich A, Erzurum S, Rubin B, Gordon S, Young J, Kattan MW. Individualizing risk prediction for positive COVID-19 testing: results from 11,672 patients. Chest. 2020 Jun 10;. doi: 10.1016/j.chest.2020.05.580. [Epub ahead of print] PubMed PMID: 32533957.")
+                            .frame(width:320, height: 130)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 3)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: +190)
+                            .padding(4)
+                            .multilineTextAlignment(.leading)
+                            .font(.system(size: 15, design:.default))
+                        
+                        
+                        Text("Predict COVID-19 test result")
+                            .frame(width:320, height: 125)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 3)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: -180)
+                            .padding(4)
+                            .multilineTextAlignment(.leading)
+                            .fontWeight(.bold)
+                            .font(.system(size: 20, design:.default))
+                        
+                        Link("Take me to the Publication", destination: URL(string: "https://pubmed.ncbi.nlm.nih.gov/32533957/")!)
+                            .frame(width:320, height: 30)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: +280)
+                            .font(.system(size: 15, design:.default))
+                        
+                        
+                        Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/COVID19/")!)
+                            .frame(width:320, height: 75)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.white).opacity(1.0))
+                            .offset(y: -60)
+                            .fontWeight(.bold)
+                            .font(.system(size: 20, design:.default))
+                        
+                        
+                        
+                    }}
+            }
+            
+            
+            
+            
+            struct ID8: View {
+                var body: some View {
+                    
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 3)
+                            .fill(.cyan)
+                            .frame(width: 350, height: 200)
+                            .opacity(0.6)
+                            .offset(y: +210)
+                        
+                        RoundedRectangle(cornerRadius: 3)
+                            .fill(.cyan)
+                            .frame(width: 350, height: 250)
+                            .opacity(0.6)
+                            .offset(y: -130)
+                        
+                        Text("Calculator")
+                            .offset(y: -280)
+                            .offset(x: -85)
+                            .multilineTextAlignment(.leading)
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                            .font(.system(size: 35, design:.default))
+                        
+                        Text("Jehi, L., Ji, X., Milinovich, A., Erzurum, S., Merlino, A., Gordon, S., Young, J. B., & Kattan, M. W. (2020). Development and validation of a model for individualized prediction of hospitalization risk in 4,536 patients with COVID-19. PloS one, 15(8), e0237419.")
+                            .frame(width:320, height: 130)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 3)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: +190)
+                            .padding(4)
+                            .multilineTextAlignment(.leading)
+                            .font(.system(size: 15, design:.default))
+                        
+                        
+                        Text("Predict Hospitalization Risk for COVID-19 Positive")
+                            .frame(width:320, height: 125)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 3)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: -180)
+                            .padding(4)
+                            .multilineTextAlignment(.leading)
+                            .fontWeight(.bold)
+                            .font(.system(size: 20, design:.default))
+                        
+                        Link("Take me to the Publication", destination: URL(string: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0237419")!)
+                            .frame(width:320, height: 30)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: +280)
+                            .font(.system(size: 15, design:.default))
+                        
+                        Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/COVID19Hospitalization")!)
+                            .frame(width:320, height: 75)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.white).opacity(1.0))
+                            .offset(y: -60)
+                            .fontWeight(.bold)
+                            .font(.system(size: 20, design:.default))
+                        
+                        
+                        
+                        
+                    }}
+            }
+            
+            
+            struct ID9: View {
+                var body: some View {
+                    
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 3)
+                            .fill(.cyan)
+                            .frame(width: 350, height: 200)
+                            .opacity(0.6)
+                            .offset(y: +210)
+                        
+                        RoundedRectangle(cornerRadius: 3)
+                            .fill(.cyan)
+                            .frame(width: 350, height: 250)
+                            .opacity(0.6)
+                            .offset(y: -130)
+                        
+                        Text("Calculator")
+                            .offset(y: -280)
+                            .offset(x: -85)
+                            .multilineTextAlignment(.leading)
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                            .font(.system(size: 35, design:.default))
+                        
+                        Text("Kattan, Michael W. PhD; Ji, Xinge MS; Milinovich, Alex BA; Adegboye, Janet MD; Duggal, Abhijit MD; Dweik, Raed MD; Khouli, Hassan MD; Gordon, Steve MD; Young, James B. MD; Jehi, Lara MD. An Algorithm for Classifying Patients Most Likely to Develop Severe Coronavirus Disease 2019 Illness. Critical Care Explorations: December 2020 - Volume 2 - Issue 12 - p e0300. doi: 10.1097/CCE.0000000000000300")
+                            .frame(width:320, height: 130)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 3)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: +190)
+                            .padding(4)
+                            .multilineTextAlignment(.leading)
+                            .font(.system(size: 15, design:.default))
+                        
+                        Text("COVID-19 Positive Risk of Severe COVID-19")
+                            .frame(width:320, height: 125)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 3)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: -180)
+                            .padding(4)
+                            .multilineTextAlignment(.leading)
+                            .fontWeight(.bold)
+                            .font(.system(size: 20, design:.default))
+                        
+                        Link("Take me to the Publication", destination: URL(string: "https://journals.lww.com/ccejournal/Fulltext/2020/12000/An_Algorithm_for_Classifying_Patients_Most_Likely.24.aspx")!)
+                            .frame(width:320, height: 30)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.white)
+                                .opacity(1.0))
+                            .offset(y: +280)
+                            .font(.system(size: 15, design:.default))
+                        
+                        
+                        Link("Take me to the Calculator", destination: URL(string:"https://riskcalc.org/SevereCOVID19/")!)
+                            .frame(width:320, height: 75)
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.white).opacity(1.0))
+                            .offset(y: -60)
+                            .fontWeight(.bold)
+                            .font(.system(size: 20, design:.default))
+                        
+                        
+                        
+                        
+                    }}
+            }
+            
+            struct ContentView_Previews:
+                PreviewProvider {
+                static var previews: some View {
+                    ContentView()
+                }
+            }
+            
+            
+        }
+        
+    }
+    
+
